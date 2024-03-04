@@ -26,4 +26,4 @@ replay_pid*
 # Folders to ignore
 JRE\ System\ Library
 Maven\ Dependencies
-/target
+target
