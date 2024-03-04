@@ -1,9 +1,12 @@
 package com.sofe3980u.BankingSystem;
 
 public class CheckingAccount implements Account {
+	private String accountNumber;
 	private String accountType;
     private String accountName;
     private String accountHolder;
+    private String accountHolderEmailAddress;
+    private String accountHolderResidentialAddress;
     private double accountBalance;
 
     public CheckingAccount(String accountName, String accountHolder, double initialBalance) {
@@ -12,6 +15,11 @@ public class CheckingAccount implements Account {
         this.accountHolder = accountHolder;
         this.accountBalance = initialBalance;
     }
+    
+    @Override
+	public String getAccountNumber() {
+		return accountNumber;
+	}
 
     @Override
     public String getAccountType() {
@@ -37,4 +45,14 @@ public class CheckingAccount implements Account {
     public void deposit(double amount) {
         accountBalance += amount;
     }
+
+	@Override
+	public String getEmailAddress() {
+		return accountHolderEmailAddress; 
+	}
+
+	@Override
+	public String getResidentialAddress() {
+		return accountHolderResidentialAddress;
+	}
 }
