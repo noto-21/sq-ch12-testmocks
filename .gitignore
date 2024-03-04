@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
+
+# Eclpse project oonfig
 *.classpath
+*.project
 
 # Log file
 *.log
