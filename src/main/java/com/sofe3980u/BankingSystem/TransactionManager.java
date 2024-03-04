@@ -5,9 +5,9 @@ import java.sql.*;
 public class TransactionManager {
 	static final String DB_URL = "DATABASE_URL";
 	
-	public String updateMasterLog(int transactionId, String transactionType, Account sourceAccount, Account destinationAccount) {
+	public boolean updateMasterLog(int transactionId, String transactionType, Account sourceAccount, Account destinationAccount) {
 
-		String returnResponse = "";
+		boolean returnResponse = false;
 	    try (Connection conn = DriverManager.getConnection(DB_URL)) {
 	        String query = "INSERT INTO TransactionMaster (transactionId, transactionType, sourceAccount, destinationAccount) VALUES (?, ?, ?, ?)";
 	        // Create a PreparedStatement to safely insert values into the SQL statement
@@ -20,7 +20,7 @@ public class TransactionManager {
 
 	            // Execute the SQL update
 	            int rowsAffected = pstmt.executeUpdate();
-	            returnResponse += "Transaction Recorded, " + rowsAffected + " row(s) affected.";
+	            returnResponse = rowsAffected >= 0 ? true : false;
 	        } catch (SQLException e) {
 	            // Handle PreparedStatement errors
 	            e.printStackTrace();
