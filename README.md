@@ -9,7 +9,7 @@ Test mocking shenanigans
 | Name | Student No. |
 | :---: | :---: |
 | Noah Toma | 100825559 |
-| Dmitri Rios-Nadeau |  |
+| Dmitri Rios-Nadeau | 100783206  |
 | Rolf-Jaden Sibal |  |
 | Logan Butler |  |
 | Nathan Perez | 100754066 |
